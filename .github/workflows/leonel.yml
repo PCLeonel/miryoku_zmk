@@ -1,0 +1,27 @@
+# Copyright 2025 Manna Harbour
+# https://github.com/manna-harbour/miryoku
+
+name: "Build leonel_sofle"
+on: workflow_dispatch
+jobs:
+  build-left:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      shield: '["sofle_left"]'
+      modules: '["default"]'
+      kconfig: '["CONFIG_ZMK_STUDIO=y\nCONFIG_ZMK_DISPLAY=y\nCONFIG_ZMK_STUDIO_LOCKING=n\nCONFIG_EC11=y\nCONFIG_EC11_TRIGGER_GLOBAL_THREAD=y\nCONFIG_BT_CTLR_TX_PWR_PLUS_8=y\nCONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y\nCONFIG_ZMK_SLEEP=y\nCONFIG_ZMK_MOUSE=y\nCONFIG_CUSTOM_WIDGET_LAYER_STATUS_HIDE_HEADING=y\nCONFIG_CUSTOM_WIDGET_LOGO_IMAGE_MIRYOKU=y"]'
+      snippet: '["studio-rpc-usb-uart"]'
+      alphas: '["default"]'
+      nav: '["default"]'
+  build-right:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      shield: '["sofle_right"]'
+      modules: '["default"]'
+      kconfig: '["CONFIG_ZMK_STUDIO=y\nCONFIG_ZMK_DISPLAY=y\nCONFIG_ZMK_STUDIO_LOCKING=n\nCONFIG_EC11=y\nCONFIG_EC11_TRIGGER_GLOBAL_THREAD=y\nCONFIG_BT_CTLR_TX_PWR_PLUS_8=y\nCONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y\nCONFIG_ZMK_SLEEP=y\nCONFIG_ZMK_MOUSE=y\nCONFIG_CUSTOM_WIDGET_LAYER_STATUS_HIDE_HEADING=y\nCONFIG_CUSTOM_WIDGET_LOGO_IMAGE_MIRYOKU=y"]'
+      alphas: '["default"]'
+      nav: '["default"]'
